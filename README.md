@@ -9,13 +9,13 @@ The college has a credit society that allows its employees to get loans at a low
 
 # Tasks to be completed
 
- Add the documentation for cloning this app and running it on a local development server to view its progress...
- Build a login interfae using some unique employee identification system that the college must be having.
- Build a backend that adds the fixed amount that is cut from an employees salary and add it to their accounts.
- BUild a front end that shows in particulars the details with a timescale of the sum present in the providend account.
- add screenshots of the UI of the app once it is completed
+- [ ] Add the documentation for cloning this app and running it on a local development server to view its progress...
+- [ ] Build a login interfae using some unique employee identification system that the college must be having.
+- [ ] Build a backend that adds the fixed amount that is cut from an employees salary and add it to their accounts.
+- [ ] BUild a front end that shows in particulars the details with a timescale of the sum present in the providend account.
+- [ ] add screenshots of the UI of the app once it is completed
 # Team
 
-@jatindalvi
-@chiraggada2911
-@shaunakgalvankar
+- @jatindalvi
+- @chiraggada2911
+- @shaunakgalvankar
