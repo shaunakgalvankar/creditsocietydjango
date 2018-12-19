@@ -20,8 +20,8 @@ from status import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('status/', include('status.urls')),
-    path('accounts/', include('django.contrib.auth.urls'))
-
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('csadmin/', include('csadmin.urls'))
     #path('',Home.as_view()),
 
 ]

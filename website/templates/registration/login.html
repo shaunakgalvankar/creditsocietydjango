@@ -13,28 +13,13 @@
       <p>Please login to see this page.</p>
     {% endif %}
   {% endif %}
-  <style media="screen">
-  html,
-body {
-height: 100%;
-}
-
-body {
-display: -ms-flexbox;
-
--ms-flex-align: center;
-align-items: center;
-padding-bottom: 40px;
-background-color: #f5f5f5;
 
 
-}
 
 
-  </style>
   <form method="post" action="{% url 'login' %}">
   {% csrf_token %}
-  
+
   <table>
 
   <tr>

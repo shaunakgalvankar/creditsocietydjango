@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'csadmin.apps.CsadminConfig',
     'status.apps.StatusConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,6 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/status/details'
+LOGIN_REDIRECT_URL = '/status/custlogin'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
