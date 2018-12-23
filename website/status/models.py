@@ -2,13 +2,27 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 # Create your models here.
+
+
+
+class Department(models.Model):
+    '''this is the schema for the department of the user entered'''
+    deaprtmentname=models.CharField(max_length=100,blank=False,null=False)
+
+    def __str__(self):
+        return self.deaprtmentname
+
 class Account(models.Model):
     """This is the schema for the account of every staff member"""
     monthlyDeduction=models.IntegerField()
     corpus=models.IntegerField()
     accountholder=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
     dateofjoining=models.DateField()
+    department=models.ForeignKey(Department,on_delete=models.SET_NULL,null=True,blank=False,related_name='department')
+
+
 
 
     def __str__(self):
@@ -19,8 +33,10 @@ class Shares(models.Model):
     sharesStartingNumber=models.IntegerField()
     sharesEndingNumber=models.IntegerField()
     valueoftheshares=models.IntegerField()
-    shareholdersName=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
+    shareholdersName=models.OneToOneField(User,on_delete=models.SET_NULL,null=True,blank=True)
 
+    def __str__(self):
+        return self.shareholdersName.username
 
 class Loan(models.Model):
     '''this is the schema for the loans given to the member only of the credit society'''
@@ -28,9 +44,10 @@ class Loan(models.Model):
     emi=models.IntegerField()
     repaymentDue=models.DateField()
     rateOfInterest=models.FloatField()
-    loanGivenTo=models.CharField(max_length=50)
+    loanGivenTo=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
 
-
+    def __str__(self):
+        return self.loanGivenTo.username
 
 
 class FixedDeposits(models.Model):

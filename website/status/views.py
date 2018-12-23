@@ -2,6 +2,7 @@ from django.shortcuts import render
 from status.models import Account,Loan,FixedDeposits,Shares,User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404
 
 def custlogin(request):
     if request.user.is_staff:
@@ -36,17 +37,38 @@ def details(request):
     'name':name
     }
 
-    return render(request,'details.html',context=context)
+    return render(request,'dashboard.html',context=context)
 
 
-def test(request):
-    return render (request,'dashboard.html')
 
+@login_required
 def shares(request):
-    return render (request,'shares.html')
+    current_user_id=request.user.username
+    print(current_user_id)
+    shares=Shares.objects.filter(shareholdersName__username__icontains=current_user_id).get()
+    context={
+        'shares':shares,
 
+    }
+
+
+    return render (request,'shares.html',context=context)
+
+@login_required
 def fixedDeposits(request):
     return render (request,'fixedDeposits.html')
 
-def Loans(request):
-    return render (request,'Loans.html')
+@login_required
+def Loansuser(request):
+    return render (request,'Loansuser.html')
+
+@login_required
+def MonthlyDeduction(request):
+    current_user_name=request.user.username
+    MonthlyDeduction=Account.objects.filter(accountholder__username__icontains=current_user_name).get()
+
+    return render (request,'MonthlyDeduction.html',{'MonthlyDeduction':MonthlyDeduction,'current_user_name':current_user_name})
+
+@login_required
+def Investment(request):
+    return render (request,'investment.html')
