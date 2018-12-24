@@ -39,6 +39,12 @@ def totalmoney(request):
     return render (request,'totalmoney.html')
 
 #class adduseraccountform(ModelForm):
-class AccountCreate(CreateView):
+class UserCreate(CreateView):
         model=User
-        fields=['first_name','last_name','username','date_joined']
+        fields=['first_name','last_name','username','password']
+        success_url=reverse_lazy('csadmin:account_create')
+
+class AccountCreate(CreateView):
+        model=Account
+        fields='__all__'
+        success_url=reverse_lazy('csadmin:members')
