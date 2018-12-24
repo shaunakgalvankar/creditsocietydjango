@@ -56,3 +56,12 @@ class FixedDeposits(models.Model):
     fdCapital=models.IntegerField()
     rateOfInterest=models.FloatField()
     maturityDate=models.DateField()
+
+class Month(models.Model):
+    monthfield=models.CharField(max_length=50,default='january')
+    def __str__(self):
+        return self.monthfield
+
+class Record(models.Model):
+    '''this is the schema for individual records of transactions '''
+    monthName=models.ForeignKey(Month,on_delete=models.SET_NULL,null=True,blank=True)
