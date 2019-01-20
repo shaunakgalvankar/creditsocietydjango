@@ -9,30 +9,6 @@
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
 
-  <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-  border-radius: 5px;
-}
-
-.pad{
-  padding-top : 10px;
-}
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-img {
-  border-radius: 5px 5px 0 0;
-}
-
-.container {
-  padding: 2px 16px;
-}
-</style>
-
   <title>Dashboard</title>
 
   <!-- Bootstrap core CSS -->
@@ -41,6 +17,7 @@ img {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link href="{% static 'status/dashboard.css'%}" rel="stylesheet">
+  <link href="{% static 'status/details.css'%}" rel="stylesheet">
 </head>
 
 <body>
@@ -124,23 +101,52 @@ img {
             </button>
           </div>
         </div>
+
         <h2>Dashboard</h2>
-        <div class="pad">
-        <div class="card">
-          <div class="container">
-            <h4><b>Shares</b></h4>
-            <p>Here Share detail come</p>
+
+
+        <div class="row">
+
+          <div class="column">
+            <div class="pad">
+              <div class="card">
+                <div class="container">
+                  <h4><b>Shares</b></h4>
+                  <p>Here Share detail come</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="pad">
+              <div class="card">
+                <div class="container">
+                  <h4><b>Fixed Deposite</b></h4>
+                  <p>Here FD detail come</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="pad">
-        <div class="card" >
-          <div class="container">
-            <h4><b>Loan</b></h4>
-            <p>Here Loan detail come</p>
+
+
+
+      
+          <div class="column2">
+          <div class="pad">
+            <div class="card">
+              <div class="container">
+                <h4><b>Loan</b></h4>
+                <p>Here Loan detail come</p>
+              </div>
+            </div>
           </div>
+
         </div>
         </div>
+
+
       </main>
     </div>
   </div>
